@@ -7,14 +7,14 @@ class DataDownloader:
     A class that downloads a CSV file from a given URL and saves it in a local directory,
     and then loads it into a pandas DataFrame.
     """
-    def __init__(self, url):
+    def __init__(self):
         """
         Initializes the DataDownloader instance.
 
         Parameters:
         url (str): The URL from which to download the CSV file.
         """
-        self.url = url
+        self.url = 'https://raw.githubusercontent.com/owid/owid-datasets/master/datasets/Agricultural%20total%20factor%20productivity%20(USDA)/Agricultural%20total%20factor%20productivity%20(USDA).csv'
         self.directory = self.get_downloads_directory()
         self.df = self.download_and_read_file()
 
@@ -55,6 +55,5 @@ class DataDownloader:
         df = pd.read_csv(file_path)
         return df
 
-url = 'https://raw.githubusercontent.com/owid/owid-datasets/master/datasets/Agricultural%20total%20factor%20productivity%20(USDA)/Agricultural%20total%20factor%20productivity%20(USDA).csv'
-dd = DataDownloader(url)
+dd = DataDownloader()
 print(dd.df.head())
