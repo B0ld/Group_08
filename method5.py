@@ -1,18 +1,27 @@
 """
-My Part for the project of group 8
+Method 5
 """
-
-import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from day1_phase2_hanna import DataDownloader
 
-df = pd.read_csv(".nik/file.csv")
+dd = DataDownloader()
+df = dd.df
 
 def method5(countries):
     """
-    This method receives a list of countries or a single country as input and creates a plot of the
-    total output quantity over time for the selected countries. The plot includes a line for 
-    each country and the x-axis is the year.
+    Receives a list of countries or a single country as input and creates a plot of the
+    total output quantity over time for the selected countries.
+
+    Parameters
+    ---------------
+    countries: str, list of str
+        Countries of which a plot is created
+        
+    Returns
+    ---------------
+    Graph of the selected countries
+
     """
     try:
         if isinstance(countries, list):
