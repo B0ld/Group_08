@@ -107,19 +107,9 @@ class DataDownloader:
         finally:
             print("Execution complete\n")
 
+# Change so that the class gives out a df
 dd = DataDownloader()
 print(dd.df.head())
 df = dd.df
 
 DataDownloader.method5(["Germany", "France", "Italy"])
-
-""" class our_class(self):
-    def download
-    def method3
-    def method1
-    def method5
-
-
-df = our_class.download()
-
-our_class.method5(["Germany", "France", "Italy"]) """
