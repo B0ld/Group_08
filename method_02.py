@@ -62,14 +62,24 @@ class DataDownloader:
 
     def countries_list(self):
         """
-        Returns:
-        list: All the countries available in the dataset.
+        Returns all distinct entries in the countries column of the 
+        class' dataframe in the form of a list.
+    
+        Parameters
+        ---------------
+        self: int
+        Refers to the class to which the module belongs to.
+        
+        Returns
+        ---------------
+        countries: list
+        A list of all distinct countries in the dataframe.
         """
-        countries = self.agri_df["Entity"].unique()
-        return list(countries)
+        countries = list(self.agri_df["Entity"].unique())
+        return countries
     def area_chart (self, country:str, normalize:bool):
         """
-        AAA
+        Module 
         Returns:
         """
         sns.set_theme()
@@ -116,6 +126,3 @@ class DataDownloader:
             plt.legend(["Crop", "Animal", "Fish"])
         else:
             raise ValueError("Inserted Country is not in Dataset")
-            
-dd = DataDownloader()
-dd.area_chart("Italy",True)
